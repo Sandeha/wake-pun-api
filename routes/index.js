@@ -96,7 +96,7 @@ var texts = [
 var moo = texts[Math.floor(Math.random()*texts.length)];
 router.get('/wake', function (req, res, next) {
   res.json({
-    "randomString": texts
+    "random": moo
   })
 });
 
