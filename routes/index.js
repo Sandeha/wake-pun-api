@@ -93,8 +93,8 @@ var texts = [
   "If Katy Perry made a song about Alan Wake, he'd be Alan Wideawake.",
   "If Alan was pissed, he'd be Alan FOR FUCKS SAKE."
 ];
-var moo = texts[Math.floor(Math.random()*texts.length)];
 router.get('/wake', function (req, res, next) {
+  var moo = texts[Math.floor(Math.random()*texts.length)];
   res.json({
     "random": moo
   })
