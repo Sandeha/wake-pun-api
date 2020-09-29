@@ -18,6 +18,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+const wake = require('wake')
+const PORT = process.env.PORT || 8000
+
+express()
+   .get('/wake', (req,res) => res.send(wake()))
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
